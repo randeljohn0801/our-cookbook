@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
 	recipeOpener();
 	document.querySelector("#searchType").addEventListener("input", performSearch);
 	document.querySelector("#searchQuery").addEventListener("input", performSearch);
+	
+	// Add delete confirmation
+	document.querySelectorAll('.delete-btn').forEach(btn => {
+		btn.addEventListener('click', function(e) {
+			if (!confirm('Are you sure you want to delete this recipe?')) {
+				e.preventDefault();
+			}
+		});
+	});
 });
 
 // SEARCH
@@ -23,6 +32,15 @@ async function performSearch() {
 
 	// Call the recipeOpener function after updating the content
 	recipeOpener();
+	
+	// Reattach delete confirmation handlers
+	document.querySelectorAll('.delete-btn').forEach(btn => {
+		btn.addEventListener('click', function(e) {
+			if (!confirm('Are you sure you want to delete this recipe?')) {
+				e.preventDefault();
+			}
+		});
+	});
 }
 
 // Recipe Opener

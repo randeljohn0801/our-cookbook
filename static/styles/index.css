@@ -45,6 +45,7 @@
 	align-items: center;
 	padding: 7.5px;
 	gap: 7.5px;
+	position: relative;
 }
 
 .recipe:not(:last-child) {
@@ -77,12 +78,51 @@
 	flex-basis: 60%;
 }
 
+.container-1 {
+	position: relative;
+	flex-basis: 20%;
+}
+
 .container-1 img {
 	height: 100%;
 	aspect-ratio: 1 / 1;
 	border: 2px solid black;
 	border-radius: 30%;
 	object-fit: fill;
+}
+
+.recipe-actions {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+	width: 100%;
+}
+
+.edit-btn, .delete-btn {
+	padding: 3px 8px;
+	border-radius: 4px;
+	color: white;
+	text-decoration: none;
+	font-size: 0.8rem;
+	opacity: 0.9;
+	transition: opacity 0.3s;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+.edit-btn:hover, .delete-btn:hover {
+	opacity: 1;
+}
+
+.edit-btn {
+	background-color: #4CAF50;
+}
+
+.delete-btn {
+	background-color: #f44336;
 }
 
 h3 {
