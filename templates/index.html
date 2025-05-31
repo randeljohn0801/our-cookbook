@@ -23,6 +23,10 @@
 	<div class="recipe">
 		<div class="container-1">
 			<img src="{{ recipe['image'] }}" alt="Recipe Image" />
+			<div class="recipe-actions">
+				<a href="/edit?recipeId={{ recipe['recipeId'] }}" class="edit-btn" onclick="event.stopPropagation()">Edit</a>
+				<a href="/delete?recipeId={{ recipe['recipeId'] }}" class="delete-btn" onclick="event.stopPropagation()">Delete</a>
+			</div>
 		</div>
 		<div class="container-2">
 			<div>

@@ -19,33 +19,29 @@
 {% block main %}
 <!-- RECIPE DETAILS -->
 <div id="recipe-image">
+	{% if isAuthor %}
+	<div class="action-buttons">
+		<a href="/edit?recipeId={{ recipeId }}" class="edit-btn">EDIT</a>
+		<a href="/delete?recipeId={{ recipeId }}" class="delete-btn">DELETE</a>
+	</div>
+	{% endif %}
 	<p id="title">{{ recipeDetails[0]["title"] }}</p>
 	<div id="type-cousine">
 		{% if recipeDetails[0]['type'] %}
 		<div>
 			<p id="type">{{ recipeDetails[0]["type"] }}</p>
 		</div>
-		{% endif %} {% if recipeDetails[0]['type'] %}
+		{% endif %} {% if recipeDetails[0]['cousine'] %}
 		<div>
 			<p id="cousine">{{ recipeDetails[0]["cousine"] }}</p>
 		</div>
 		{% endif %}
 	</div>
 	<div id="date-time">
-		<p>{{ recipeDetails[0]["username"] }}</p>
-		<p>{{ recipeDetails[0]["date"] }}</p>
-		<p>{{ recipeDetails[0]["time"] }}</p>
+		<p>By {{ recipeDetails[0]["username"] }}</p>
+		<p>Posted on {{ recipeDetails[0]["date"] }}</p>
+		<p>at {{ recipeDetails[0]["time"] }}</p>
 	</div>
-	{% if isAuthor %}
-	<form method="get" action="/delete">
-		<input hidden name="recipeId" value="{{ recipeId }}" />
-		<button id="delete-button" type="submit">DELETE</button>
-	</form>
-	<form method="get" action="/edit">
-		<input hidden name="recipeId" value="{{ recipeId }}" />
-		<button id="edit-button" type="submit">EDIT</button>
-	</form>
-	{% endif %}
 </div>
 
 <!-- INGREDIENTS -->

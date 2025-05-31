@@ -51,4 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
 			formatAmounts(changeables);
 		});
 	});
+
+	// Add tooltips for buttons
+	const deleteButton = document.getElementById('delete-button');
+	const editButton = document.getElementById('edit-button');
+	
+	if (deleteButton) {
+		deleteButton.title = "Delete this recipe";
+	}
+	if (editButton) {
+		editButton.title = "Edit this recipe";
+	}
 });

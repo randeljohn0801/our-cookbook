@@ -21,6 +21,40 @@ main > *:not(:last-child) {
 	color: white;
 }
 
+.action-buttons {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	right: 0;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.edit-btn, .delete-btn {
+	padding: 5px 10px;
+	border-radius: 4px;
+	color: white;
+	text-decoration: none;
+	font-size: 0.9rem;
+	opacity: 0.9;
+	transition: opacity 0.3s;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+.edit-btn:hover, .delete-btn:hover {
+	opacity: 1;
+}
+
+.edit-btn {
+	background-color: #4CAF50;
+}
+
+.delete-btn {
+	background-color: #f44336;
+}
+
 #title {
 	font-size: 5.5rem;
 	-webkit-text-stroke: 2px black;
